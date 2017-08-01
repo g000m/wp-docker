@@ -32,7 +32,7 @@ services:
     restart: always
     volumes:
       - "./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
-      - "./wordpress:/var/www/html"
+      - "./public:/var/www/html"
       # - "file_backup:/var/www/html/wp-content/uploads"
 
   phpmyadmin:
@@ -51,8 +51,8 @@ services:
     image: tatemz/wp-cli
     links:
       - db:mysql
-    # volumes:
-    #   - "./public:/var/www/html"
+    volumes:
+      - "./public:/var/www/html"
 
   livereload:
     container_name: livereload
