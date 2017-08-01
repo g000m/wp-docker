@@ -1,0 +1,69 @@
+version: "3"
+
+services:
+
+  db:
+    container_name: db
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+    image: mariadb
+    ports:
+      - 8081:3306
+    restart: always
+    volumes:
+      - "db_backup:/var/lib/mysql"
+      - "./data/db:/var/lib/mysql"
+
+  wordpress:
+    container_name: wordpress
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_PASSWORD: root
+    image: wordpress
+    links:
+      - db:mysql
+    ports:
+      - 8080:80
+    restart: always
+    volumes:
+      - "./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
+      - "./data/content:/var/www/html"
+      - "file_backup:/var/www/html/wp-content/uploads"
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db:mysql
+    ports:
+      - 8181:80
+    restart: always
+
+  wpcli:
+    command: "--info"
+    container_name: wpcli
+    entrypoint: wp
+    image: tatemz/wp-cli
+    links:
+      - db:mysql
+    volumes:
+      - "./public:/var/www/html"
+
+  livereload:
+    container_name: livereload
+    image: ocasta/livereload
+    ports:
+      - "35729:35729"
+    volumes:
+      - "./public/wp-content/themes:/usr/src/livereload-watch"
+
+volumes:
+  db_backup:
+    # external: true
+  file_backup:
+    # external: true
