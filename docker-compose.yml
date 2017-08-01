@@ -14,7 +14,7 @@ services:
       - 8081:3306
     restart: always
     volumes:
-      - "db_backup:/var/lib/mysql"
+      # - "db_backup:/var/lib/mysql"
       - "./data/db:/var/lib/mysql"
 
   wordpress:
@@ -33,7 +33,7 @@ services:
     volumes:
       - "./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
       - "./data/content:/var/www/html"
-      - "file_backup:/var/www/html/wp-content/uploads"
+      # - "file_backup:/var/www/html/wp-content/uploads"
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -62,8 +62,8 @@ services:
     volumes:
       - "./public/wp-content/themes:/usr/src/livereload-watch"
 
-volumes:
-  db_backup:
+# volumes:
+  # db_backup:
     # external: true
-  file_backup:
+  # file_backup:
     # external: true
