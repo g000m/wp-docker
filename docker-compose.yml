@@ -31,9 +31,9 @@ services:
       - 8080:80
     restart: always
     volumes:
-      - "./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
-      - "./public:/var/www/html"
       # - "file_backup:/var/www/html/wp-content/uploads"
+      - "./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
+      - "./public:/var/www/html"
 
   phpmyadmin:
     container_name: phpmyadmin
