@@ -1,6 +1,6 @@
 #!/bin/bash
 
-timestamp=$(date "+%d%M%Y-%H%S")
+# timestamp=$(date "+%d%M%Y-%H%S")
 
 docker-compose run wpcli db export backup.sql &&
 mv ./public/backup.sql ./data/backup.sql &&

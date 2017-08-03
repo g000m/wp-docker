@@ -10,7 +10,6 @@ else
   cd ./public/wp-content/themes/gesso
   rm -rf .git &&
   npm install &&
-  composer create-project pattern-lab/edition-drupal-standard pattern-lab &&
   grunt build
 fi
 
