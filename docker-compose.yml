@@ -61,7 +61,7 @@ services:
     ports:
       - "35729:35729"
     volumes:
-      - "./public/wp-content/themes:/usr/src/livereload-watch"
+      - "./public:/usr/src/livereload-watch"
 
 # volumes:
   # db_backup:
