@@ -14,9 +14,8 @@ services:
       - 8081:3306
     restart: always
     volumes:
-      # - "db_backup:/var/lib/mysql"
       - "./data:/docker-entrypoint-initdb.d"
-      # - "./data/db:/var/lib/mysql"
+      - db_backup:/var/lib/mysql
 
   wordpress:
     container_name: wordpress
@@ -32,7 +31,6 @@ services:
       - 8080:80
     restart: always
     volumes:
-      # - "file_backup:/var/www/html/wp-content/uploads"
       - "./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
       - "./public:/var/www/html"
 
@@ -63,8 +61,8 @@ services:
     volumes:
       - "./public:/usr/src/livereload-watch"
 
-# volumes:
-  # db_backup:
+volumes:
+  db_backup:
     # external: true
   # file_backup:
     # external: true
