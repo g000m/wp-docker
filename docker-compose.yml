@@ -54,13 +54,14 @@ services:
     volumes:
       - "./public:/var/www/html"
 
-  livereload:
-    container_name: livereload
-    image: ocasta/livereload
-    ports:
-      - "35729:35729"
-    volumes:
-      - "./public:/usr/src/livereload-watch"
+#Omitting this configuration in favor of Browsersync, which is loaded with the Gesso theme
+  # livereload:
+  #   container_name: livereload
+  #   image: ocasta/livereload
+  #   ports:
+  #     - "35729:35729"
+  #   volumes:
+  #     - "./public:/usr/src/livereload-watch"
 
 volumes:
   db_backup:
