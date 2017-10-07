@@ -5,9 +5,9 @@ services:
   db:
     container_name: db
     environment:
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: wordpress
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_PASSWORD: wordpress
       MYSQL_DATABASE: wordpress
     image: mariadb
     ports:
@@ -23,8 +23,9 @@ services:
       - db
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_PASSWORD: root
-    image: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    image: wordpress:latest
     links:
       - db:mysql
     ports:
