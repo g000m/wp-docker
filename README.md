@@ -1,4 +1,4 @@
-# Wordpress Docker Local Dev Environment with Gesso theme
+# Wordpress Docker Local Dev Environment (with Gesso theme)
 
 This docker instance is meant to be a local dev environment for Wordpress.
 
@@ -6,11 +6,10 @@ This docker instance is meant to be a local dev environment for Wordpress.
 
 1. Clone this repo
 2. Run `$ docker-compose up -d`
-3. Run `$ sh bin/gesso-install`
+3. The install will be available at http://localhost:8080, follow the install prompts to finish setting the site up.
 
 ### WP-CLI
-
-Add this alias to ~/.bash_profile to easily run WP-CLI command.
+To avoid having to enter the wpcli docker container before running any WP-CLI command you should add the following alias to your local machine's ~/.bash_profile.
 
 `alias dwp="docker-compose run wpcli"`
 
@@ -21,7 +20,7 @@ You can easily access the WordPress/PHP container with docker-compose exec. Here
 
 `alias dbash="sudo docker exec -i -t wordpress /bin/bash"`
 
-### Database Backup and Restore
+### Manual Database Backup and Restore
 - For Backups
 Run `$ sh bin/db-backup.sh`
 from anywhere inside the <my-project-name> root directory
