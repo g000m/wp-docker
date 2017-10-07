@@ -14,7 +14,7 @@ Add this alias to ~/.bash_profile to easily run WP-CLI command.
 
 `alias dwp="docker-compose run wpcli"`
 
-Instead of running a command like wp plugin install you instead run `dwp plugin install` from anywhere inside the <my-project-name> directory, and it runs the command inside of the php container.
+Instead of running a command like `wp plugin install` you instead run `dwp plugin install` from anywhere inside the <my-project-name> directory, and it runs the command inside of the php container.
 
 ### SSH Access
 You can easily access the WordPress/PHP container with docker-compose exec. Here's a simple alias to add to your ~/.bash_profile:
@@ -27,7 +27,7 @@ Run `$ sh bin/db-backup.sh`
 from anywhere inside the <my-project-name> root directory
 
 - For Restore
-Run `$ sh bin/db-restor.sh`
+Run `$ sh bin/db-restore.sh`
 from anywhere inside the <my-project-name> root directory
 
 ### Patternlab
