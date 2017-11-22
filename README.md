@@ -23,16 +23,16 @@ You can easily access the WordPress/PHP container with docker-compose exec. Here
 ### Manual Database Backup and Restore
 - For Backups
 Run `$ sh bin/db-backup.sh`
-from anywhere inside the <my-project-name> root directory
+from anywhere inside the project's root directory
 
 - For Restore
 Run `$ sh bin/db-restore.sh`
-from anywhere inside the <my-project-name> root directory
+from anywhere inside the project's root directory
 
 ### Patternlab
 To install Pattenlab
 Run  `$ sh bin/patternlab.sh`
-from anywhere inside the <my-project-name> root directory
+from anywhere inside the project's root directory
 
 
 ### Theme Development
