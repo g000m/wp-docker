@@ -30,8 +30,10 @@ Run `$ sh bin/db-restore.sh`
 from anywhere inside the <my-project-name> root directory
 
 ### Patternlab
-Run `$ sh bin/fed-start.sh`
+To install Pattenlab
+Run  `$ sh bin/patternlab.sh`
 from anywhere inside the <my-project-name> root directory
+
 
 ### Theme Development
 This box comes with a script to install run Gesso,  a Sass-based Wordpress starter theme that outputs accessible HTML5 markup. It uses a mobile-first responsive approach and leverages SMACSS for style organization. This encourages a component-based approach to theming through the creation of discrete, reusable UI elements.
