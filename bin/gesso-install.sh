@@ -18,8 +18,18 @@ if [ -d "public/wp-content/plugins/timber-library" ];
 then
   echo "Timber Library is installed"
 else
-  echo "Timber Library is not found...installing"
+  echo "Timber Library is not found. Installing..."
   docker-compose run wpcli plugin install timber-library &&
   docker-compose run wpcli plugin activate timber-library &&
   docker-compose run wpcli theme activate gesso
+fi
+
+# Create Symlink to Gesso Theme in root folder
+if [ -d "theme" ];
+then
+  echo "theme symlink exists"
+else
+  echo "Creating symlink to gesso theme in root"
+  cd ./
+  ln -s public/wp-content/themes/gesso theme
 fi
