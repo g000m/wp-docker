@@ -33,3 +33,21 @@ else
   cd ./
   ln -s public/wp-content/themes/gesso theme
 fi
+
+#Install Patternlab
+if [ -d "public/wp-content/themes/gesso/pattern-lab" ];
+then
+  echo "Patternlab is already installed"
+else
+  echo
+  read -p "Would you like to install Patternlab (y/N)" -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]];
+  then
+    echo "Installing Patternlab"
+    cd ./public/wp-content/themes/gesso
+    composer create-project  pattern-lab/edition-drupal-standard pattern-lab
+  else
+    echo "No Patternlab needed"
+  fi
+fi
