@@ -27,9 +27,9 @@ fi
 # Create Symlink to Gesso Theme in root folder
 if [ -d "theme" ];
 then
-  echo "theme symlink exists"
+  echo "Theme folder symlink exists"
 else
-  echo "Creating symlink to gesso theme in root"
+  echo "Creating symlink to gesso theme in project root"
   cd ./
   ln -s public/wp-content/themes/gesso theme
 fi
@@ -40,7 +40,7 @@ then
   echo "Patternlab is already installed"
 else
   echo
-  read -p "Would you like to install Patternlab (y/N)" -n 1 -r
+  read -t 10 -p "Would you like to install Patternlab? (y/N)" -n 1 -r
   echo
   if [[ $REPLY =~ ^[Yy]$ ]];
   then
@@ -48,6 +48,6 @@ else
     cd ./public/wp-content/themes/gesso
     composer create-project  pattern-lab/edition-drupal-standard pattern-lab
   else
-    echo "No Patternlab needed"
+    echo "Skipping Patternlab installation"
   fi
 fi

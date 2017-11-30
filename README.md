@@ -46,6 +46,12 @@ More information about Gesso can be found [here](https://github.com/windycitymoo
 Run `$ sh bin/gesso-install.sh`
 from anywhere inside the <my-project-name> root directory
 
+- There is an option install Patternlab as part of this script.
+
+When prompted, select /forumone/starterkit-twig-drupal-gesso as the starterkit.
+
+If prompted, select 'r' to overwrite existing /source/ files.
+
 - To Run Gesso
 Run `$ sh bin/fed-start.sh`
 from anywhere inside the <my-project-name> root directory
