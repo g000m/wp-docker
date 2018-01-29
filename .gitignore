@@ -1,8 +1,32 @@
+# ----------------------------------------------
+# Based On
+# .gitignore for WordPress
+# https://gist.github.com/salcode/9940509
+#
+# This file is tailored for a WordPress project
+# using the WP-Docker directory structure
+#
+# This file specifies intentionally untracked files to ignore
+# http://git-scm.com/docs/gitignore
+#
+# NOTES:
+# The purpose of gitignore files is to ensure that certain files not
+# tracked by Git remain untracked.
+#
+# To ignore uncommitted changes in a file that is already tracked,
+# use `git update-index --assume-unchanged`.
+#
+# To stop tracking a file that is currently tracked,
+# use `git rm --cached`
+#
+# ----------------------------------------------
+
+# ignore WP Core Files except the wp-content
 public/*
 !public/wp-content/
+
+# ignore wp-config file
 public/wp-config.php
-
-
 
 # ignore these plugins
 public/wp-content/plugins/hello.php
@@ -16,6 +40,9 @@ node_modules/
 # ignore OS generated files
 ehthumbs.db
 Thumbs.db
+
+# ignore all files starting with .
+.*
 
 # ignore Editor files
 *.sublime-project
