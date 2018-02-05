@@ -22,7 +22,7 @@
 # ----------------------------------------------
 
 # ignore WP Core Files except the wp-content
-public/*
+!public/*    # Uncomment this if you only want to track the wp-content folder
 !public/wp-content/
 
 # ignore wp-config file
@@ -43,6 +43,7 @@ Thumbs.db
 
 # ignore all files starting with .
 .*
+!.gitignore
 
 # ignore Editor files
 *.sublime-project
