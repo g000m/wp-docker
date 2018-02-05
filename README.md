@@ -29,15 +29,14 @@ from anywhere inside the project's root directory
 Run `$ sh bin/db-restore.sh`
 from anywhere inside the project's root directory
 
-<--
+<!---
 ### Patternlab
 To install Pattenlab
 Run  `$ sh bin/patternlab.sh`
 from anywhere inside the project's root directory
--->
-
 When prompted, select /forumone/starterkit-twig-drupal-gesso as the starterkit.
 If prompted, select 'r' to overwrite existing /source/ files.
+-->
 
 ### Theme Development
 This box comes with a script to install run Gesso,  a Sass-based Wordpress starter theme that outputs accessible HTML5 markup. It uses a mobile-first responsive approach and leverages SMACSS for style organization. This encourages a component-based approach to theming through the creation of discrete, reusable UI elements.
