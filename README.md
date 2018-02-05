@@ -29,10 +29,12 @@ from anywhere inside the project's root directory
 Run `$ sh bin/db-restore.sh`
 from anywhere inside the project's root directory
 
+<--
 ### Patternlab
 To install Pattenlab
 Run  `$ sh bin/patternlab.sh`
 from anywhere inside the project's root directory
+-->
 
 When prompted, select /forumone/starterkit-twig-drupal-gesso as the starterkit.
 If prompted, select 'r' to overwrite existing /source/ files.
