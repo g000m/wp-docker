@@ -25,7 +25,9 @@ services:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
-    image: jburger/wordpress-xdebug
+    build:
+      context: .
+      dockerfile: Dockerfile
     links:
       - db:mysql
     ports:
