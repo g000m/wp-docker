@@ -22,7 +22,7 @@
 # ----------------------------------------------
 
 # ignore WP Core Files except the wp-content
-!public/*    # Uncomment this if you only want to track the wp-content folder
+# public/*    # Uncomment this if you only want to track the wp-content folder
 !public/wp-content/
 
 # ignore wp-config file
