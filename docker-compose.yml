@@ -25,7 +25,8 @@ services:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
-    image: wordpress:latest
+      #XDEBUG_CONFIG: "remote_host=192.168.1.11" # IP local machine
+    image: jburger/wordpress-xdebug
     links:
       - db:mysql
     ports:
