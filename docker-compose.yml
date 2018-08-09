@@ -30,7 +30,7 @@ services:
     links:
       - db:mysql
     ports:
-      - 8080:80
+      - 80:80
     restart: always
     volumes:
       - "./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
