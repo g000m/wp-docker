@@ -3,6 +3,8 @@ version: "3"
 services:
 
   db:
+    env_file:
+      - .env
     container_name: db
     environment:
       MYSQL_USER: wordpress
@@ -18,6 +20,8 @@ services:
       - db_backup:/var/lib/mysql
 
   wordpress:
+    env_file:
+      - .env
     container_name: wordpress
     depends_on:
       - db
@@ -34,7 +38,7 @@ services:
     restart: always
     volumes:
       - "./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
-      - "./public:/var/www/html"
+      - "./${PROJECT_NAME}-dev:/var/www/html"
 
   phpmyadmin:
     container_name: phpmyadmin
@@ -53,7 +57,7 @@ services:
     links:
       - db:mysql
     volumes:
-      - "./public:/var/www/html"
+      - "./${PROJECT_NAME}-dev:/var/www/html"
 
 volumes:
   db_backup:
